@@ -1,0 +1,393 @@
+
+@mixin transform {
+  transform: scale(1.6);
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: repeat(10,1fr);
+  border:2px solid black;
+  grid-gap:10px;
+  font-family:  'Kavivanar', cursive;
+  background-image: url(../images/fire.jpeg);
+}
+
+.item1{
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-end:7;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #7EA2AA;
+    overflow: hidden;
+    padding: 14px 83px;
+    font-family:  'Kavivanar', cursive;
+      background-image: url(../images/fire.jpeg);
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 83px;
+    font-size: 17px;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+    background-color:#7EA2AA;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+   font-family:  'Kavivanar', cursive;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.side{
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 10;
+  grid-column-end: 2;
+}
+/* Style the links inside the sidenav */
+#mySidenav a {
+    position:sticky; /* Position them relative to the browser window */
+    left: 10px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 100px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+    top:0;
+    line-height: 200px;
+}
+
+#mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#camping {
+    background-color: #262A10;
+}
+
+#hiking {
+
+    background-color: #262A10; /* Blue */
+}
+
+#fishing {
+
+    background-color: #262A10; /* Red */
+}
+
+#climbing {
+
+    background-color: #262A10/* Light Black */
+}
+
+.one{
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-end: 3;
+  background-image: url(../images/gallery/camp-fire.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+  transition: all .2s ease-in-out;
+  color: white;
+}
+.one:hover{
+  @include transform;
+}
+.two{
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-end:4;
+  background-image: url(../images/gallery/camp-items.jpg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.two:hover{
+  @include transform;
+}
+.three{
+  grid-column-start:4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-end: 5;
+  background-image: url(../images/gallery/camping-tents.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.three:hover{
+  @include transform;
+}
+.four{
+  grid-column-start:5;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-end:6;
+  background-image: url(../images/gallery/tent.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.four:hover{
+  @include transform;
+}
+.five{
+  grid-column-start:2;
+  grid-row-start: 4;
+  grid-row-end:6;
+  grid-column-end:3;
+  background-image: url(../images/gallery/hiking-active.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.five:hover{
+  @include transform;
+}
+.six{
+  grid-column-start:3;
+  grid-row-start: 4;
+  grid-row-end:6;
+  grid-column-end:4;
+  background-image:url(../images/gallery/hiking-actively.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.six:hover{
+  @include transform;
+}
+.seven{
+  grid-column-start:4;
+  grid-row-start: 4;
+  grid-row-end:6;
+  grid-column-end:5;
+  background-image: url(../images/gallery/hiking-activity.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.seven:hover{
+  @include transform;
+}
+.eight{
+  grid-column-start:5;
+  grid-row-start: 4;
+  grid-row-end:6;
+  grid-column-end:6;
+  background-image: url(../images/gallery/hiking-bags.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.eight:hover{
+  @include transform;
+}
+.nine{
+  grid-column-start:2;
+  grid-row-start:6;
+  grid-row-end:8;
+  grid-column-end:3;
+  background-image: url(../images/gallery/fishing-activity.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.nine:hover{
+  @include transform;
+}
+.ten{
+  grid-column-start:3;
+  grid-row-start:6;
+  grid-row-end:8;
+  grid-column-end:4;
+  background-image: url(../images/gallery/fishing-dock.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: black;
+}
+.ten:hover{
+  @include transform;
+}
+.eleven{
+  grid-column-start:4;
+  grid-row-start:6;
+  grid-row-end:8;
+  grid-column-end:5;
+  background-image: url(../images/gallery/fishing-line.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: black;
+}
+.eleven:hover{
+  @include transform;
+}
+.twelve{
+  grid-column-start:5;
+  grid-row-start:6;
+  grid-row-end:8;
+  grid-column-end:6;
+  background-image: url(../images/gallery/fishing-sea.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.twelve:hover{
+  @include transform;
+}
+.thirteen{
+  grid-column-start:2;
+  grid-row-start:8;
+  grid-row-end:10;
+  grid-column-end:3;
+  background-image: url(../images/gallery/climbing.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.thirteen:hover{
+  @include transform;
+}
+.fourteen{
+  grid-column-start:3;
+  grid-row-start:8;
+  grid-row-end:10;
+  grid-column-end:4;
+  background-image: url(../images/gallery/achievement.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: black;
+}
+.fourteen:hover{
+  @include transform;
+}
+.fifteen{
+  grid-column-start:4;
+  grid-row-start:8;
+  grid-row-end:10;
+  grid-column-end:5;
+  background-image: url(../images/gallery/standing-rock.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.fifteen:hover{
+  @include transform;
+}
+.sixteen{
+  grid-column-start:5;
+  grid-row-start:8;
+  grid-row-end:10;
+  grid-column-end:6;
+  background-image: url(../images/gallery/yoga-rock.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+    color: white;
+}
+.sixteen:hover{
+  @include transform;
+}
